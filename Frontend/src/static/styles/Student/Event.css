@@ -1,0 +1,67 @@
+
+
+.recent-activity,
+.upcoming-events {
+    margin-bottom: 40px;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: .2px solid rgb(92, 81, 81);
+    font-size: 1.1rem;
+}
+
+.upcoming-events table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.upcoming-events th,
+.upcoming-events td {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 1.2px solid rgb(92, 81, 81);
+}
+
+.upcoming-events th {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 1.1rem;
+}
+
+
+/*------------------------------------ Small Screen  ----------------------------- */
+@media (max-width: 800px){
+    .recent-activity li {
+        font-size: .9rem;
+        margin: 5px 0;
+        padding: 7px;
+    }
+    .upcoming-events th {
+        font-size: .9rem;
+        margin: 5px 0;
+        padding: 7px;
+    }
+}
+
+/*------------------------------------ Very Small screen ----------------------------- */
+@media(max-width: 400px){
+    .recent-activity li {
+        font-size: .7rem;
+        margin: 5px 0;
+        padding: 7px;
+    }
+    .upcoming-events th {
+        font-size: .8rem;
+        margin: 5px 0;
+        padding: 7px;
+    }
+}

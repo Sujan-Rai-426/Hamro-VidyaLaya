@@ -1,0 +1,107 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background: url('/Frontend/src/static/img/laptop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    background-color: rgb(115 120 145);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border: .3px solid rgb(33, 47, 110);
+    padding: 0 5vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 20;
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1rem 0;
+}
+nav li{
+    height: 40px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+}
+nav a:hover{
+    background-color: #f0f0f0;
+}
+nav li:first-child{
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgb(165 150 150 / 15%);
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 100;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+} 
+@media (max-width: 800px){
+    nav{
+        padding: 0 2vh;
+    }
+    nav a{
+        padding: 0 30px;
+    }
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+@media(max-width: 400px){
+    nav{
+        padding: 0;
+    }
+    nav a{
+        padding: 0 20px;
+    }
+    .sidebar{
+        width: 50%;
+        z-index: 100;
+    }
+}

@@ -1,0 +1,58 @@
+
+
+/* ---------------------Sidebar--------------------- */
+.student-sidebar{
+    padding: 2vh 2vw 0 1vw;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-right: 1px solid #ddd;  
+    color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-height: 100%;
+    /* z-index: 10; */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: sticky; 
+}
+.student-sidebar a{
+    height: 100%;
+    padding: 0.5vh 1vw;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    margin: 0;
+    font-size: 1.1rem;
+}
+.student-sidebar a:hover{
+    background-color: gray;
+}
+
+
+/*------------------------------------ Small Screen  ----------------------------- */
+@media (max-width: 800px){
+    .student-sidebar a{
+        font-size: .9rem;
+        padding: .2vh .6vw;
+        margin: 2vh 0;
+    }
+    .student-profile{
+        padding: .7vh .7vw 0 .7vw;
+        font-size: .9rem;
+    }
+}
+
+/*------------------------------------ Very Small screen ----------------------------- */
+@media(max-width: 400px){
+    .student-sidebar a{
+        font-size: .7rem;
+        padding: .2vh .6vw;
+    }
+    .student-profile{
+        padding: .7vh .7vw 0 .7vw;
+        font-size: .7rem;
+    }
+}

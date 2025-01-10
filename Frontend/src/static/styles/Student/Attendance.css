@@ -1,0 +1,43 @@
+.attendance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  /* 7 columns for the week */
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.attendance-day {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.attendance-day.present {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.attendance-day.absent {
+    background-color: #f44336;
+    color: white;
+}
+
+.attendance-day.holiday {
+    background-color: #f1f1f1;
+    color: gray;
+}
+
+.attendance-summary {
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+.circle-bar-graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Allow full width */
+    max-width: 37vw; /* Optional: Limit the max width of the chart */
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #09135b;
+    border: 1px solid white;
+    border-radius: 15px;
+    /* margin: auto; Center it horizontally */
+}
+
+.circle-bar-graph-container h4 {
+    text-align: center;
+    color: white; /* Adjust based on your theme */
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Make the canvas responsive */
+.circle-bar-graph-container canvas {
+    width: 70% !important; /* Make canvas adjust to the container width */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+/* Responsive layout: Adjust chart and recent activity on smaller screens */
+@media (max-width: 768px) {
+    .circle-bar-graph-container {
+        max-width: 90%; /* Shrink container slightly */
+        padding: 2vh 2vw;
+        margin: 2vh 2vw;
+    }
+    .circle-bar-graph-container h4 {
+        font-size: .9rem; /* Adjust font size */
+        margin: 0;
+    }
+    .circle-bar-graph-container canvas {
+        width: 100% !important; /* Make canvas adjust to the container width */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+}

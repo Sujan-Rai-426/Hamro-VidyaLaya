@@ -1,0 +1,73 @@
+
+.course-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .course-container h2 {
+    text-align: center;
+    color: #e2e2e2;
+    margin: 0;
+  }
+  .course-container h5 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .course-card {
+    background-color: #ffffff7f;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .course-card h3 {
+    font-size: 18px;
+    /* color: #333; */
+    margin-bottom: 10px;
+  }
+  
+  .course-card p {
+    font-size: 14px;
+    /* color: #666; */
+    margin-bottom: 8px;
+  }
+  
+  .course-card .btn-view-pdf {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 8px 16px;
+    border: 1px solid rgb(248, 248, 248);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .course-card .btn-view-pdf:hover {
+    background-color: #45a049;
+  }
+  
+  @media ( max-width:776px ){
+    .course-container h5 {
+      font-size: .8rem;
+      margin-bottom: 18px;
+    }
+    .course-card .btn-view-pdf {
+      padding: 3px 7px;
+    }
+  }
