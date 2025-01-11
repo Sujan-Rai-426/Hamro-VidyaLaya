@@ -40,10 +40,10 @@ function Student_Dashboard() {
                     </div>
                 </Link>
 
-                <Link to="/students/student-profile">
+                <Link to={`/students/${id}/student-fee-payment`}>
                     <div className="report-container-box" style={{backgroundColor: '#0000ff8c'}}>
-                        <i className="bi bi-mortarboard"></i>
-                        <p>Achievements</p>
+                        <i className="bi bi-currency-rupee"></i>
+                        <p> Fee Payment </p>
                     </div>
                 </Link>
                 

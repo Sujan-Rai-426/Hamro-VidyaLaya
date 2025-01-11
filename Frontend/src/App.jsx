@@ -17,6 +17,8 @@ import Student_Profile from './components/Student/Profile'
 import Student_Attendance from './components/Student/Attendance'
 import Student_Result from './components/Student/Result'
 import Student_Course from './components/Student/Course'
+import Student_Fee_Payment from './components/Student/Fee_Payment'
+import Teacher_Dashboard from './components/Teacher/Dashboard'
 
 function App() {
 
@@ -52,7 +54,11 @@ function App() {
 
 
                             {/* Teacher Route */}
-                          <Route exact path='/teachers/*' element={ <Teacher /> } />
+                          <Route exact path='/teachers/:id/*' element={ <Teacher /> } >
+                              <Route index element={<Navigate to="teacher-dashboard/"  />} />  {/* <---- Default route for /student */}
+                              <Route exact path='teacher-dashboard/' element={<Teacher_Dashboard />}/>
+                              <Route path="*" element={<Navigate to="teacher/dashboard/"  />} /> {/* <--- Fallback route for undefined path */}
+                          </Route>
 
 
                             {/* Student Route */}
@@ -63,6 +69,7 @@ function App() {
                               <Route path="student-attendance-report/" element={<Student_Attendance />} />
                               <Route path="student-courses/" element={<Student_Course />} />
                               <Route path="student-result/" element={<Student_Result />} />
+                              <Route path="student-fee-payment/" element={<Student_Fee_Payment />} />
                               <Route path="*" element={<Navigate to="students/dashboard/"  />} /> {/* <--- Fallback route for undefined path */}
                           </ Route>
                       
