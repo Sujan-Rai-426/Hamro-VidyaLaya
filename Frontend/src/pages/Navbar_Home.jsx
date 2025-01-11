@@ -8,6 +8,7 @@ import '../static/styles/Home/Navbar_Home.css'
 
 function Navbar_Home(props) {
 
+// sourcery skip: avoid-function-declarations-in-blocks
     function showSidebar(){
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'flex'
