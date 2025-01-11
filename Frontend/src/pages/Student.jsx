@@ -33,7 +33,7 @@ function Student() {
                 <Student_Sidebar id={ id } />
                     {/* Student Page Main content: Dynamically updates */}
                 <div style={{ flex: 1, padding: "2vh 2vw" }}>
-                    <Outlet context={{ id }}/>
+                    <Outlet context={{ id, students }}/>
                 </div>
             </div>
             

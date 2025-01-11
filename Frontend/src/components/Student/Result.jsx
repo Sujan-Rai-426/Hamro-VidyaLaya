@@ -1,32 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
-import api from '../../api';
 import '../../static/styles/Student/Result.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 function Student_Result() {
-    const { id } = useOutletContext(); // Get the student ID from outlet context
-    const [students, setStudents] = useState({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        api.get(`api/students/${id}`)
-            .then((response) => {
-                console.log(response.data);
-                setStudents(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching student data:", error);
-                setLoading(false);
-            });
-    }, [id]);
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
+    const { id, students } = useOutletContext(); // Get the student ID and student api from outlet context
 
 
 

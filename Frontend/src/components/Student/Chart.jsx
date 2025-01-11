@@ -1,32 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 import { useOutletContext } from 'react-router-dom';
-import api from '../../api';
 import '../../static/styles/Student/Chart.css';
 
 function Student_Chart() {
-    const { id } = useOutletContext(); // Get the student ID from outlet context
-    const [students, setStudents] = useState({});
-    const [loading, setLoading] = useState(true);
+    const { id, students } = useOutletContext(); // Get the student ID and student api from outlet context
     const chartRef = useRef(null); // Store the chart instance
     const canvasRef = useRef(null); // Store the canvas element reference
 
-    useEffect(() => {
-        // Fetch student data
-        api.get(`api/students/${id}`)
-            .then((response) => {
-                console.log(response.data);
-                setStudents(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching student data:", error);
-                setLoading(false);
-            });
-    }, [id]);
 
     useEffect(() => {
-        if (!students.results) return; // Wait until data is fetched
+        if (!students.results) {
+            return;
+        } // Wait until data is fetched
 
         // Get the canvas context
         const ctx = canvasRef.current.getContext("2d");
@@ -109,10 +95,6 @@ function Student_Chart() {
             }
         };
     }, [students.results]); // Recreate chart when results change
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
 
     return (
         <div className="circle-bar-graph-container">

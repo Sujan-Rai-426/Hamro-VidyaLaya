@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import api from "../../api";
+import React from "react";
 import { useOutletContext } from "react-router-dom";
 import "../../static/styles/Student/Course.css"; // Import the corresponding CSS file
 
@@ -9,26 +8,7 @@ function Student_Course() {
   const API_BASE_URL = "http://127.0.0.1:8000";
 
     // Student id
-  const { id } = useOutletContext(); // Get the student ID from outlet context
-  const [students, setStudents] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-      api.get(`api/students/${id}`)
-          .then((response) => {
-              console.log(response.data);
-              setStudents(response.data);
-              setLoading(false);
-          })
-          .catch((error) => {
-              console.error("Error fetching student data:", error);
-              setLoading(false);
-          });
-  }, [id]);
-
-  if (loading) {
-      return <p>Loading...</p>;
-  }
+  const { id, students } = useOutletContext(); // Get the student ID and student api from outlet context
 
 
   return (
